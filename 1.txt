@@ -1,2 +1,4 @@
 first line in EasyHwan
 modified
+line 3
+line 4
