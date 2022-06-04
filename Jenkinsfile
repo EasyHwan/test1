@@ -11,11 +11,17 @@ pipeline {
             }
         }
         stage('Test') {
-            def dateFormat = new SimpleDateFormat("yyMMddHHmm")
-            def date = new Date()
-            def TODAY = dateFormat.format(date)
-    
-            sh "echo ${TODAY}"
+            steps steps {
+                 // java 라이브러리를 이용하여 날짜를 구한다 
+                 script {
+                    def dateFormat = new SimpleDateFormat("yyyyMMdd")
+                    def date = new Date()
+                
+                    today = dateFormat.format(date)
+                    echo today
+                    
+                }                
+            } 
         }
         stage('Deploy') {
             steps {
