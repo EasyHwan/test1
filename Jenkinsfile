@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                build 'SeleniumMaven'
+                build '202206041122'
             }
         }
     }
