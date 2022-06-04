@@ -12,9 +12,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")
-                def date = new Date()
-                today = dateFormat.format(date)
+                script {
+                    def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")
+                    def date = new Date()
+                    today = dateFormat.format(date)
+                }
                 echo today
             }
         }
