@@ -1,28 +1,12 @@
-import java.text.SimpleDateFormat
 pipeline {
     agent  {
         label "demoAgent"
     } 
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
         stage('Test') {
             steps {
-                script {
-                    def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")
-                    def date = new Date()
-                    today = dateFormat.format(date)
-                }
-                echo today
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                build 'SeleniumMaven'
             }
         }
     }
