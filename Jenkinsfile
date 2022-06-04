@@ -7,7 +7,7 @@ pipeline {
     } 
     
     stages {
-        stage('Prepare Today Date') {
+        stage('Date') {
             steps {
                  script {
                     def dateFormat = new SimpleDateFormat("yyyyMMddhhmm")
@@ -18,10 +18,10 @@ pipeline {
                 }                
             } 
         }
-        stage('Print Today Date') {
+        stage('Print Date') {
             steps {
                   echo today
             } 
         }
-}
+    }
 }
